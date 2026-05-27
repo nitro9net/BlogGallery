@@ -1,0 +1,38 @@
+<?= Form::open(['class' => 'layout']) ?>
+    <div class="layout-row">
+        <?= $this->formRender() ?>
+    </div>
+
+    <div class="form-buttons">
+        <button
+            type="submit"
+            data-request="onSave"
+            data-hotkey="ctrl+s, cmd+s"
+            data-load-indicator="<?= e(trans('backend::lang.form.saving')) ?>"
+            class="btn btn-primary">
+            <?= e(trans('backend::lang.form.save')) ?>
+        </button>
+
+        <button
+            type="button"
+            data-request="onSave"
+            data-request-data="close:1"
+            data-load-indicator="<?= e(trans('backend::lang.form.saving')) ?>"
+            class="btn btn-default">
+            <?= e(trans('backend::lang.form.save_and_close')) ?>
+        </button>
+
+        <button
+            type="button"
+            data-request="onClearGallery"
+            data-request-data="record_id: <?= $formModel->id ?>"
+            data-request-confirm="<?= e(trans('nitro9net.blogphotos::lang.messages.confirm_delete_gallery')) ?>"
+            class="btn btn-danger">
+            <?= e(trans('nitro9net.blogphotos::lang.galleries.delete_gallery')) ?>
+        </button>
+
+        <a href="<?= Backend::url('nitro9net/blogphotos/galleries') ?>" class="btn btn-default">
+            <?= e(trans('backend::lang.form.cancel')) ?>
+        </a>
+    </div>
+<?= Form::close() ?>

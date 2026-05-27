@@ -1,0 +1,20 @@
+columns:
+    title:
+        label: rainlab.blog::lang.post.title
+        searchable: true
+
+    slug:
+        label: rainlab.blog::lang.post.slug
+        searchable: true
+
+    published:
+        label: rainlab.blog::lang.post.published
+        type: switch
+
+    published_at:
+        label: rainlab.blog::lang.post.published_on
+        type: datetime
+
+    gallery_images_count:
+        label: nitro9net.blogphotos::lang.galleries.photo_count
+        sortable: false

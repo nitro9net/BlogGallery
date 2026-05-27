@@ -1,0 +1,11 @@
+title: nitro9net.blogphotos::lang.galleries.title
+modelClass: RainLab\Blog\Models\Post
+list: $/nitro9net/blogphotos/controllers/galleries/columns.yaml
+recordUrl: nitro9net/blogphotos/galleries/update/:id
+noRecordsMessage: backend::lang.list.no_records
+showSetup: true
+showCheckboxes: true
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: backend::lang.list.search_prompt

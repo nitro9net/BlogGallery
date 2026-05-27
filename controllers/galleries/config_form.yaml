@@ -1,0 +1,14 @@
+name: nitro9net.blogphotos::lang.galleries.gallery
+modelClass: RainLab\Blog\Models\Post
+form: $/nitro9net/blogphotos/controllers/galleries/fields.yaml
+defaultRedirect: nitro9net/blogphotos/galleries
+create:
+    title: nitro9net.blogphotos::lang.galleries.create
+    redirect: nitro9net/blogphotos/galleries/update/:id
+    redirectClose: nitro9net/blogphotos/galleries
+update:
+    title: nitro9net.blogphotos::lang.galleries.update
+    redirect: nitro9net/blogphotos/galleries/update/:id
+    redirectClose: nitro9net/blogphotos/galleries
+preview:
+    title: nitro9net.blogphotos::lang.galleries.preview

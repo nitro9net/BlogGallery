@@ -1,6 +1,7 @@
 <?php namespace Nitro9net\BlogPhotos\Components;
 
 use Cms\Classes\ComponentBase;
+use Nitro9net\BlogPhotos\Models\Settings;
 use RainLab\Blog\Models\Post as BlogPost;
 
 class Gallery extends ComponentBase
@@ -33,14 +34,14 @@ class Gallery extends ComponentBase
             ],
             'thumbWidth' => [
                 'title' => 'nitro9net.blogphotos::lang.properties.thumb_width.title',
-                'default' => 480,
+                'default' => Settings::get('gallery_thumb_width', 480),
                 'type' => 'string',
                 'validationPattern' => '^[0-9]+$',
                 'validationMessage' => 'nitro9net.blogphotos::lang.properties.numeric_validation'
             ],
             'thumbHeight' => [
                 'title' => 'nitro9net.blogphotos::lang.properties.thumb_height.title',
-                'default' => 320,
+                'default' => Settings::get('gallery_thumb_height', 320),
                 'type' => 'string',
                 'validationPattern' => '^[0-9]+$',
                 'validationMessage' => 'nitro9net.blogphotos::lang.properties.numeric_validation'
@@ -56,13 +57,13 @@ class Gallery extends ComponentBase
             'includeCss' => [
                 'title' => 'nitro9net.blogphotos::lang.properties.include_css.title',
                 'description' => 'nitro9net.blogphotos::lang.properties.include_css.description',
-                'default' => true,
+                'default' => Settings::get('gallery_include_css', true),
                 'type' => 'checkbox'
             ],
             'includeJs' => [
                 'title' => 'nitro9net.blogphotos::lang.properties.include_js.title',
                 'description' => 'nitro9net.blogphotos::lang.properties.include_js.description',
-                'default' => true,
+                'default' => Settings::get('gallery_include_js', true),
                 'type' => 'checkbox'
             ]
         ];

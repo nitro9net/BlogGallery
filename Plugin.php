@@ -2,6 +2,7 @@
 
 use Backend\Widgets\Form;
 use Event;
+use Nitro9net\BlogPhotos\Models\Settings;
 use RainLab\Blog\Controllers\Posts as BlogPostsController;
 use RainLab\Blog\Models\Post as BlogPost;
 use System\Classes\PluginBase;
@@ -29,6 +30,56 @@ class Plugin extends PluginBase
         ];
     }
 
+    public function registerNavigation()
+    {
+        return [
+            'blogphotos' => [
+                'label' => 'nitro9net.blogphotos::lang.navigation.blogphotos',
+                'url' => \Backend::url('nitro9net/blogphotos/galleries'),
+                'icon' => 'icon-picture-o',
+                'permissions' => ['nitro9net.blogphotos.manage_galleries'],
+                'order' => 500,
+                'sideMenu' => [
+                    'galleries' => [
+                        'label' => 'nitro9net.blogphotos::lang.navigation.galleries',
+                        'url' => \Backend::url('nitro9net/blogphotos/galleries'),
+                        'icon' => 'icon-th-large',
+                        'permissions' => ['nitro9net.blogphotos.manage_galleries']
+                    ]
+                ]
+            ]
+        ];
+    }
+
+    public function registerSettings()
+    {
+        return [
+            'settings' => [
+                'label' => 'nitro9net.blogphotos::lang.settings.label',
+                'description' => 'nitro9net.blogphotos::lang.settings.description',
+                'category' => 'nitro9net.blogphotos::lang.plugin.name',
+                'icon' => 'icon-picture-o',
+                'class' => Settings::class,
+                'order' => 500,
+                'permissions' => ['nitro9net.blogphotos.manage_settings']
+            ]
+        ];
+    }
+
+    public function registerPermissions()
+    {
+        return [
+            'nitro9net.blogphotos.manage_galleries' => [
+                'tab' => 'nitro9net.blogphotos::lang.plugin.name',
+                'label' => 'nitro9net.blogphotos::lang.permissions.manage_galleries'
+            ],
+            'nitro9net.blogphotos.manage_settings' => [
+                'tab' => 'nitro9net.blogphotos::lang.plugin.name',
+                'label' => 'nitro9net.blogphotos::lang.permissions.manage_settings'
+            ]
+        ];
+    }
+
     public function boot()
     {
         $this->extendBlogPostModel();
@@ -43,6 +94,10 @@ class Plugin extends PluginBase
                 'order' => 'sort_order',
                 'delete' => true
             ];
+
+            $model->addDynamicMethod('getGalleryImagesCountAttribute', function () use ($model) {
+                return $model->gallery_images()->count();
+            });
         });
     }
 

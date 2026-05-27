@@ -1,0 +1,29 @@
+fields:
+    title:
+        label: rainlab.blog::lang.post.title
+        disabled: true
+        span: left
+
+    slug:
+        label: rainlab.blog::lang.post.slug
+        disabled: true
+        span: right
+
+    published:
+        label: rainlab.blog::lang.post.published
+        type: switch
+        disabled: true
+        span: left
+
+    gallery_images:
+        label: nitro9net.blogphotos::lang.fields.gallery_images
+        commentAbove: nitro9net.blogphotos::lang.galleries.gallery_images_help
+        type: fileupload
+        mode: image
+        useCaption: true
+        imageWidth: 180
+        imageHeight: 120
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: full

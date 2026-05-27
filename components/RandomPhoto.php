@@ -1,6 +1,7 @@
 <?php namespace Nitro9net\BlogPhotos\Components;
 
 use Cms\Classes\ComponentBase;
+use Nitro9net\BlogPhotos\Models\Settings;
 use stdClass;
 use RainLab\Blog\Models\Post as BlogPost;
 use System\Models\File;
@@ -24,14 +25,14 @@ class RandomPhoto extends ComponentBase
         return [
             'thumbWidth' => [
                 'title' => 'nitro9net.blogphotos::lang.properties.thumb_width.title',
-                'default' => 480,
+                'default' => Settings::get('random_thumb_width', 480),
                 'type' => 'string',
                 'validationPattern' => '^[0-9]+$',
                 'validationMessage' => 'nitro9net.blogphotos::lang.properties.numeric_validation'
             ],
             'thumbHeight' => [
                 'title' => 'nitro9net.blogphotos::lang.properties.thumb_height.title',
-                'default' => 320,
+                'default' => Settings::get('random_thumb_height', 320),
                 'type' => 'string',
                 'validationPattern' => '^[0-9]+$',
                 'validationMessage' => 'nitro9net.blogphotos::lang.properties.numeric_validation'
@@ -39,7 +40,7 @@ class RandomPhoto extends ComponentBase
             'linkTo' => [
                 'title' => 'nitro9net.blogphotos::lang.properties.link_to.title',
                 'description' => 'nitro9net.blogphotos::lang.properties.link_to.description',
-                'default' => 'image',
+                'default' => Settings::get('random_link_to', 'image'),
                 'type' => 'dropdown',
                 'options' => [
                     'image' => 'Image',
@@ -50,13 +51,13 @@ class RandomPhoto extends ComponentBase
             'postPage' => [
                 'title' => 'nitro9net.blogphotos::lang.properties.post_page.title',
                 'description' => 'nitro9net.blogphotos::lang.properties.post_page.description',
-                'default' => 'blog/post',
+                'default' => Settings::get('random_post_page', 'blog/post'),
                 'type' => 'string'
             ],
             'includeCss' => [
                 'title' => 'nitro9net.blogphotos::lang.properties.include_css.title',
                 'description' => 'nitro9net.blogphotos::lang.properties.include_css.description',
-                'default' => true,
+                'default' => Settings::get('random_include_css', true),
                 'type' => 'checkbox'
             ]
         ];

@@ -5,6 +5,41 @@ return [
         'name' => 'BlogPhotos',
         'description' => 'Adds image galleries to RainLab Blog posts.'
     ],
+    'navigation' => [
+        'blogphotos' => 'BlogPhotos',
+        'galleries' => 'Galleries'
+    ],
+    'permissions' => [
+        'manage_galleries' => 'Manage BlogPhotos galleries',
+        'manage_settings' => 'Manage BlogPhotos settings'
+    ],
+    'settings' => [
+        'label' => 'BlogPhotos',
+        'description' => 'Configure default gallery and random photo component settings.',
+        'gallery_tab' => 'Gallery',
+        'random_tab' => 'Random photo',
+        'gallery_section' => 'Default gallery component settings',
+        'random_section' => 'Default random photo component settings'
+    ],
+    'galleries' => [
+        'title' => 'BlogPhotos Galleries',
+        'gallery' => 'Gallery',
+        'create' => 'Create Gallery',
+        'update' => 'Edit Gallery',
+        'preview' => 'View Gallery',
+        'photo_count' => 'Photos',
+        'gallery_images_help' => 'Add, reorder, caption, edit, or delete photos attached to this blog post.',
+        'add_gallery' => 'Add Gallery',
+        'delete_gallery' => 'Delete Gallery',
+        'delete_selected' => 'Delete Selected Galleries'
+    ],
+    'messages' => [
+        'no_galleries_selected' => 'Please select at least one gallery.',
+        'galleries_deleted' => 'Selected galleries have been deleted.',
+        'gallery_deleted' => 'Gallery has been deleted.',
+        'confirm_delete_gallery' => 'Delete all photos in this gallery?',
+        'confirm_delete_selected' => 'Delete all photos in the selected galleries?'
+    ],
     'fields' => [
         'gallery_images' => 'Gallery images',
         'gallery_images_comment' => 'Upload and reorder images for this blog post.'

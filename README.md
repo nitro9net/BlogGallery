@@ -71,6 +71,12 @@ Set `linkTo` to `image`, `post`, or `none`. When linking to a post, set `postPag
 
 The component exposes `galleryRandom` to the page if you want to build your own markup. It includes `photo`, `post`, `path`, `thumb`, `postUrl`, `caption`, and `alt`.
 
+## Backend management
+
+BlogPhotos adds a backend navigation item at `BlogPhotos > Galleries`. From there you can view blog posts that have gallery photos, edit gallery images and captions, delete individual photos with the file upload widget, or clear entire galleries.
+
+Default component settings are available in October's backend Settings area under `BlogPhotos`.
+
 ### Custom partial
 
 An example October CMS partial is included at:

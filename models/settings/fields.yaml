@@ -1,0 +1,78 @@
+tabs:
+    fields:
+        gallery_section:
+            label: nitro9net.blogphotos::lang.settings.gallery_section
+            type: section
+            tab: nitro9net.blogphotos::lang.settings.gallery_tab
+
+        gallery_thumb_width:
+            label: nitro9net.blogphotos::lang.properties.thumb_width.title
+            type: number
+            min: 1
+            span: left
+            tab: nitro9net.blogphotos::lang.settings.gallery_tab
+
+        gallery_thumb_height:
+            label: nitro9net.blogphotos::lang.properties.thumb_height.title
+            type: number
+            min: 1
+            span: right
+            tab: nitro9net.blogphotos::lang.settings.gallery_tab
+
+        gallery_include_css:
+            label: nitro9net.blogphotos::lang.properties.include_css.title
+            comment: nitro9net.blogphotos::lang.properties.include_css.description
+            type: switch
+            span: left
+            tab: nitro9net.blogphotos::lang.settings.gallery_tab
+
+        gallery_include_js:
+            label: nitro9net.blogphotos::lang.properties.include_js.title
+            comment: nitro9net.blogphotos::lang.properties.include_js.description
+            type: switch
+            span: right
+            tab: nitro9net.blogphotos::lang.settings.gallery_tab
+
+        random_section:
+            label: nitro9net.blogphotos::lang.settings.random_section
+            type: section
+            tab: nitro9net.blogphotos::lang.settings.random_tab
+
+        random_thumb_width:
+            label: nitro9net.blogphotos::lang.properties.thumb_width.title
+            type: number
+            min: 1
+            span: left
+            tab: nitro9net.blogphotos::lang.settings.random_tab
+
+        random_thumb_height:
+            label: nitro9net.blogphotos::lang.properties.thumb_height.title
+            type: number
+            min: 1
+            span: right
+            tab: nitro9net.blogphotos::lang.settings.random_tab
+
+        random_link_to:
+            label: nitro9net.blogphotos::lang.properties.link_to.title
+            comment: nitro9net.blogphotos::lang.properties.link_to.description
+            type: dropdown
+            options:
+                image: Image
+                post: Blog post
+                none: No link
+            span: left
+            tab: nitro9net.blogphotos::lang.settings.random_tab
+
+        random_post_page:
+            label: nitro9net.blogphotos::lang.properties.post_page.title
+            comment: nitro9net.blogphotos::lang.properties.post_page.description
+            type: text
+            span: right
+            tab: nitro9net.blogphotos::lang.settings.random_tab
+
+        random_include_css:
+            label: nitro9net.blogphotos::lang.properties.include_css.title
+            comment: nitro9net.blogphotos::lang.properties.include_css.description
+            type: switch
+            span: left
+            tab: nitro9net.blogphotos::lang.settings.random_tab
